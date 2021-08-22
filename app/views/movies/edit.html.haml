@@ -2,8 +2,8 @@
 
 = form_tag movie_path(@movie), :method => :put do
 
-  = label :movie, :title, 'Title'
-  = text_field :movie, :title
+  = label :movie, :title, 'Title', 'Description
+  = text_field :movie, :title, :Description
 
   = label :movie, :rating, 'Rating'
   = select :movie, :rating, ['G','PG','PG-13','R','NC-17']
@@ -12,3 +12,4 @@
   = date_select :movie, :release_date, :start_year => 1930
 
   = submit_tag 'Save Changes'
+  = link_to "Cancel", :back

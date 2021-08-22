@@ -7,8 +7,10 @@ class MoviesController < ApplicationController
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
-    render(:partial => 'movie', :object => @movie) if request.xhr?
-    # will render app/views/movies/show.html.haml by default
+      # will render app/views/movies/show.html.haml by default
+      rescue ActiveRecord::RecordNotFound
+        flash[:warning] = "Movie not found."
+        redirect_to movies_path
   end
 
   def new
@@ -18,6 +20,7 @@ class MoviesController < ApplicationController
   def create
     user_params = params.require(:movie).permit(:title,:rating,:release_date,:description)
     @movie = Movie.create!(user_params)
+
     flash[:notice] = "#{@movie.title} was successfully created." 
     redirect_to movie_path(@movie)
   end
