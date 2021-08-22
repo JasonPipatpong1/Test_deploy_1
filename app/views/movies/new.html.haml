@@ -5,6 +5,9 @@
   = label :movie, :title, 'Title'
   = text_field :movie, :title
 
+  = label :movie, :description, 'description'
+  = text_field :movie, :description
+
   = label :movie, :rating, 'Rating'
   = select :movie, :rating, ['G','PG','PG-13','R','NC-17']
  
@@ -12,4 +15,4 @@
   = date_select :movie, :release_date, :start_year => 1930
 
   = submit_tag 'Save Changes'
- 
+  = link_to "Cancel", :movies 
