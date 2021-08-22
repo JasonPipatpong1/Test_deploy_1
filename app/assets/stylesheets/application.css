@@ -51,6 +51,9 @@ html, body {
     padding: 4px;
     text-align: left;
   }
+  table#movies tr:hover { 
+    background-color: wheat;
+  }
   #notice, #warning {
     background: lightblue;
     margin: 1em 0;
@@ -69,7 +72,7 @@ html, body {
     padding: 30px;
     margin-bottom: 16px;
     background-color: wheat;
-    color: red;
+    color: maroon;
     text-align: center;
     font-size: 26px;
   }

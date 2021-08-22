@@ -1,9 +1,7 @@
 class MoviesController < ApplicationController
   def index
-	@movies = Movie.all
-  end 
-  def create
-    Movie.create(params[:movie])
+	  @movies = Movie.order('movies.title ASC').all
+    #@movies = Movie.all.sort_by {|obj| obj.title}
   end
 
   def show
