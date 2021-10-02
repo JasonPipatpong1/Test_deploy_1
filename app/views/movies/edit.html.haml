@@ -12,4 +12,4 @@
   = date_select :movie, :release_date, :start_year => 1930
 
   = submit_tag 'Save Changes'
-  = link_to "Cancel", :back
+  = link_to 'Cancel', movie_path(@movie.id)
